@@ -1,12 +1,12 @@
 %define		qtver		5.9.0
 Summary:	KDiagram
 Name:		kdiagram
-Version:	2.6.1
+Version:	2.8.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/kdiagram/%{version}/%{name}-%{version}.tar.xz
-# Source0-md5:	d0f8624a2decad2ba6a871e13799da23
+# Source0-md5:	a63593335d382d4c6518e1a98a9e013f
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
@@ -18,6 +18,7 @@ BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
+Kdiagram
 
 %package devel
 Summary:	Header files for %{name} development
@@ -57,10 +58,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %ghost %{_libdir}/libKChart.so.2
-%attr(755,root,root) %{_libdir}/libKChart.so.2.6.1
-%attr(755,root,root) %ghost %{_libdir}/libKGantt.so.2
-%attr(755,root,root) %{_libdir}/libKGantt.so.2.6.1
+%ghost %{_libdir}/libKChart.so.2
+%attr(755,root,root) %{_libdir}/libKChart.so.2.*.*
+%ghost %{_libdir}/libKGantt.so.2
+%attr(755,root,root) %{_libdir}/libKGantt.so.2.*.*
 
 %files devel
 %defattr(644,root,root,755)
@@ -70,7 +71,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/kgantt_version.h
 %{_libdir}/cmake/KChart
 %{_libdir}/cmake/KGantt
-%attr(755,root,root) %{_libdir}/libKChart.so
-%attr(755,root,root) %{_libdir}/libKGantt.so
+%{_libdir}/libKChart.so
+%{_libdir}/libKGantt.so
 %{_libdir}/qt5/mkspecs/modules/qt_KChart.pri
 %{_libdir}/qt5/mkspecs/modules/qt_KGantt.pri
