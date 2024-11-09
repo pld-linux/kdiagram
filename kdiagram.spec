@@ -1,13 +1,14 @@
 %define		qtver		5.9.0
-Summary:	KDiagram
+Summary:	KDiagram - libraries for creating business charts
+Summary(pl.UTF-8):	KDiagram - biblioteki do tworzenia diagramów biznesowych
 Name:		kdiagram
 Version:	3.0.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	http://download.kde.org/stable/kdiagram/%{version}/%{name}-%{version}.tar.xz
+Source0:	https://download.kde.org/stable/kdiagram/%{version}/%{name}-%{version}.tar.xz
 # Source0-md5:	06d2462d04e7826b347edc5baac85e10
-URL:		http://www.kde.org/
+URL:		https://kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	cmake >= 3.20
 BuildRequires:	ninja
@@ -19,7 +20,13 @@ BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Kdiagram
+The KDiagram Libraries consist of KChart, a library for creating
+business charts, and KGantt, a library for creating Gantt diagrams.
+
+%description -l pl.UTF-8
+Biblioteki KDiagram składają się z biblioteki KChart do tworzenia
+wykresów biznesowych oraz biblioteki KGantt do tworzenia diagramów
+Gantta.
 
 %package devel
 Summary:	Header files for %{name} development
